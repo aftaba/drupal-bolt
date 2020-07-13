@@ -1,0 +1,82 @@
+/* ==========================================================================
+   #UI-LIST OBJECT
+   ========================================================================== */
+
+/**
+ * The UI list object creates blocky list items with a separator between each
+ * item
+ */
+
+$bolt-ui-list-padding--collapsed: (0) !default;
+$bolt-ui-list-padding--xxsmall: (xxsmall 0) !default;
+$bolt-ui-list-padding--xsmall: (xsmall 0) !default;
+$bolt-ui-list-padding--small: (small 0) !default;
+$bolt-ui-list-padding--medium: (medium 0) !default;
+$bolt-ui-list-padding--large: (large 0) !default;
+
+
+$bolt-ui-list-border-width: 1px !default;
+$bolt-ui-list-border-style: solid !default;
+
+.o-bolt-ui-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.o-bolt-ui-list__item {
+  position: relative;
+
+  &:not(:last-child) {
+    border-bottom-color: bolt-theme(border, 0.2);
+    border-bottom-style: $bolt-ui-list-border-style;
+    border-bottom-width: $bolt-ui-list-border-width;
+  }
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.o-bolt-ui-list > .o-bolt-ui-list__item,
+.o-bolt-ui-list--medium > .o-bolt-ui-list__item {
+  @include bolt-padding($bolt-ui-list-padding--medium);
+}
+
+// Remove all padding
+.o-bolt-ui-list--collapsed > .o-bolt-ui-list__item {
+  @include bolt-padding($bolt-ui-list-padding--collapsed);
+}
+
+.o-bolt-ui-list--xxsmall > .o-bolt-ui-list__item {
+  @include bolt-padding($bolt-ui-list-padding--xxsmall);
+}
+
+.o-bolt-ui-list--xsmall > .o-bolt-ui-list__item {
+  @include bolt-padding($bolt-ui-list-padding--xsmall);
+}
+
+.o-bolt-ui-list--small > .o-bolt-ui-list__item {
+  @include bolt-padding($bolt-ui-list-padding--small);
+}
+
+.o-bolt-ui-list--large > .o-bolt-ui-list__item {
+  @include bolt-padding($bolt-ui-list-padding--large);
+}
+
+
+.o-bolt-ui-list--borderless > .o-bolt-ui-list__item {
+  border-bottom-width: 0;
+}
+
+.o-bolt-ui-list--small > .o-bolt-ui-list__item {
+  @include bolt-padding($bolt-ui-list-padding--small);
+}
+
+.o-bolt-ui-list--medium > .o-bolt-ui-list__item {
+  @include bolt-padding($bolt-ui-list-padding--medium);
+}
+
+.o-bolt-ui-list--large > .o-bolt-ui-list__item {
+  @include bolt-padding($bolt-ui-list-padding--large);
+}
